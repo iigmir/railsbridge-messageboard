@@ -1,0 +1,26 @@
+/*
+	Kube. CSS & JS Framework
+	Version 6.5.2
+	Updated: February 2, 2017
+
+	http://imperavi.com/kube/
+
+	Copyright (c) 2009-2017, Imperavi LLC.
+	License: MIT
+*/
+@import "kube/variables";
+@import "kube/mixins";
+@import "kube/components";
+
+nav, .container
+{
+    max-width:960px;
+    margin:1rem auto;
+}
+
+nav
+{
+    padding:0.5rem;
+    h1{ margin:0;padding:0; }
+    border-bottom:6px rgb(212, 212, 212) dotted;
+}

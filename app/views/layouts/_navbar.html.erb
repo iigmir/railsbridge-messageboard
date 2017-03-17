@@ -1,0 +1,7 @@
+<nav class="row">
+    <div class="col col-9"><h1>Message board</h1></div>
+    <div class="col col-3"><% if current_user %>
+    <p><%= current_user.email %></p>
+    <p><%= link_to("Log out", destroy_user_session_path, method: :delete) %></p>
+    <% end %></div>
+</nav>
