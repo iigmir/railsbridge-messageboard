@@ -1,0 +1,17 @@
+<%= form_for @posts do |p| %>
+    <%= p.hidden_field :poster, value: current_user.email %>
+    <table>
+        <tr>
+            <td> <%= p.label :title %> </td>
+            <td> <%= p.text_field :title, :required => true %> </td>
+        </tr>
+        <tr>
+          <td> <%= p.label :content %> </td>
+          <td> <%= p.text_area :content, :required => true %> </td>
+        </tr>
+        <tr>
+          <td> <%= p.submit "Submit article" %> </td>
+          <td> <%= link_to 'Cancel', @post %> </td>
+        </tr>
+    </table>
+<% end %>

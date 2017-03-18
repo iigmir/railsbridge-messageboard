@@ -1,0 +1,6 @@
+<h1>Hello World!</h1>
+<% @posts.each do |p| %>
+    <p style="margin-left:1rem;"><%= p.title %>, <%= p.poster %> created at <%= p.created_at %>.</p>
+<% end %>
+
+<%= link_to("Create Post",new_posts_path) %>
