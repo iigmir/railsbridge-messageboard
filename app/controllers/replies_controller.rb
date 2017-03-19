@@ -2,7 +2,7 @@ class RepliesController < ApplicationController
     # C for CRUD
     def new
         @r = Reply.new
-        @post  = Post.find_by_id(params[:id])])
+        @post  = Post.find_by_id(params[:id])
     end
     def create
         @r = Reply.create(rep_params)
