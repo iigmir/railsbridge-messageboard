@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
     # C for CRUD
     def new
-        @posts = Post.new
+        @post = Post.new
     end
     def create
-        @posts = Post.create(post_params)
-        if @posts.save
+        @post = Post.create(post_params)
+        if @post.save
            redirect_to posts_url
         else
            render 'new'
