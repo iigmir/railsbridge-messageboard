@@ -1,6 +1,19 @@
 <h1>Hello World!</h1>
-<% @posts.each do |p| %>
-    <p style="margin-left:1rem;"><%= p.title %>, <%= p.poster %> created at <%= p.created_at %>.</p>
-<% end %>
-
-<%= link_to("Create Post",new_posts_path) %>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Poster</th>
+            <th>Posted Date</th>
+        </tr>
+    </thead>
+    <% @posts.each do |p| %>
+    <tr>
+        <td><%= link_to( p.title, post_path(p.id) ) %></td>
+        <td><%= p.poster %></td>
+        <td><%= p.created_at %></td>
+    </tr>
+    <% end %>
+</table>
+<hr/>
+<%= link_to("Create Post",new_post_path) %>

@@ -1,6 +1,9 @@
-<h1>Show!</h1>
-<h2><%= @article.title %></h2>
-<p><%= @article.content %></p>
+<article>
+    <h2><%= @post.title %></h2>
+    <h3>Posted by <%= @post.poster %> on <%= @post.created_at %>
+    </h3>
+    <br />
+    <p> <%= @post.content %></p>
+</article>
 
-
-<%= link_to("Create Post",new_posts_path) %>
+<%= link_to("Back to main",posts_path) %>

@@ -17,11 +17,9 @@ class PostsController < ApplicationController
         @posts = Post.all
     end
     def show
-        #@posts = Post.all
-        #@posts = Post.find_by_id(params[:id])
-        @posts = Post.find_by_id(params[:id])
-        if @posts == nil
-          redirect_to 'index'
+        @post  = Post.find_by_id(params[:id])
+        if @post == nil
+          redirect_to posts_path
         end
     end
 
