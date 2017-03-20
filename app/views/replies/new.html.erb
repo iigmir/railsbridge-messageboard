@@ -1,13 +1,15 @@
 <h2>Reply</h2>
-<%= @r.hidden_field :author, value: current_user.email %>
-<%= @r.hidden_field :post_id value: @post.id %>
-<table>
-    <tr>
-      <td> <%= @r.label :response %> </td>
-      <td> <%= @r.text_area :response, :required => true %> </td>
-    </tr>
-    <tr>
-      <td> <%= @r.submit "Submit article" %> </td>
-      <td> <%= link_to 'Cancel', post_path(@post.id) %> </td>
-    </tr>
-</table>
+<%= form_for @rep, url: new_post_reply_path, html: { method: :get } do |r| %>
+    <%= r.hidden_field :author, value: current_user.email %>
+    <%= r.hidden_field :post_id, value: @post %>
+    <table>
+        <tr>
+          <td> <%= r.label :response %> </td>
+          <td> <%= r.text_area :response, :required => true %> </td>
+        </tr>
+        <tr>
+          <td> <%= r.submit "Submit article" %> </td>
+          <td> <%= link_to 'Cancel', post_path( @post ) %> </td>
+        </tr>
+    </table>
+<% end %>
